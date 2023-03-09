@@ -19,4 +19,4 @@ Infrastructure considerations:
 How to use:
 Our API currently supports the following GET requests (we do not needs other kinds of HTTP requests for this task):
 
-![Alt text](/screenshots/docker.jpeg?raw=true "Docker")
+![Docker ps](/screenshots/docker.jpg?raw=true "Docker")
