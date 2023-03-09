@@ -21,13 +21,13 @@ Having said that, I had to hardcode the docker virtual network address here inst
 
 https://github.com/romanwlb/oreilly_exercise/blob/main/oreilly_api/take_home.py#L5
 
-My solution should work on OS X but let me know if you are using Linux and I will look into making it work.
+My solution should work on OS X with default docker network configuration but let me know if you are using Linux and I will look into making it work.
 
 ## Application Design considerations.
 
-In order to spend no more than 3-4 hours on a basic working solution for a proof of concept I had to take a few shortcuts, let's just say it's a very dev version of the app that is aspiring to go to a QA environment some day ;)
+To spend no more than 3-4 hours on a basic working solution for a proof of concept I had to take a few shortcuts, let's just say it's a very dev version of the app that is aspiring to go to a QA environment some day ;)
 
-In order to make it production ready we would need to:
+### In order to make it production ready we would need to:
 
 -Use a dedicated WSGI server, since we are runnng our code in our own k8s cluster we need to use one of the self hosted solutions: https://flask.palletsprojects.com/en/2.2.x/deploying/#self-hosted-options
 
@@ -39,6 +39,7 @@ In order to make it production ready we would need to:
 
 -Consider some caching solutions for the db requests
 
+
 ## Infrastructure considerations:
 
 -Use a hosted k8s solution such as GKE or AKS
@@ -48,6 +49,8 @@ In order to make it production ready we would need to:
 -Use SSL
 
 -If we want to run postgres in k8s we should deploy it as a stateful set with persistent volumes in order to make sure we don't lose the data
+
+-Create k8s resource yamls and a deployment pipeline
 
 ## How to use:
 Our API currently supports the following GET requests (we do not needs other kinds of HTTP requests for this task):
