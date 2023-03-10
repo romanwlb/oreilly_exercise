@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: oreilly-api
+  name: or-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: oreilly-api
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: oreilly-api
+    spec:
+      hostNetwork: true
+      containers:
+      - image: registry.hub.docker.com/romansage/api_minikube2:latest
+        name: oreilly-api
+        ports:
+        - containerPort: 5000
